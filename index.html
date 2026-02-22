@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Jennie Gallery • by Mahnoor Fatima</title>
+
+<style>
+:root {
+  --bg: #050509;
+  --text: #ffffff;
+  --accent: #ff4f9a;
+  --nav-bg: rgba(5, 5, 9, 0.8);
+
+  /* DARK MODE BACKGROUND */
+  --hero-bg: url("https://i.pinimg.com/736x/a2/86/4d/a2864d686fa62dc8bd3eef13a979e856.jpg");
+}
+
+body.light {
+  --bg: #f5f5f5;
+  --text: #111;
+  --nav-bg: rgba(255,255,255,0.9);
+
+  /* LIGHT MODE BACKGROUND */
+  --hero-bg: url("https://i.pinimg.com/736x/6e/c0/fa/6ec0fa32034d11ebf9d79ff1f4b79d4a.jpg");
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.4s;
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(14px);
+  background: var(--nav-bg);
+  z-index: 1000;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+nav a:hover { opacity: 1; }
+
+.toggle-btn {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--text);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.hero {
+  height: 100vh;
+  background: var(--hero-bg) center/cover no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+
+body.light .hero::before {
+  background: rgba(255,255,255,0.35);
+}
+
+.hero h1 {
+  position: relative;
+  z-index: 2;
+  font-size: 3rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* INFO SECTION */
+.info-section {
+  padding: 60px 30px;
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.info-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: var(--accent);
+}
+
+.info-section h3 {
+  margin-top: 30px;
+  color: var(--accent);
+}
+
+/* GALLERY */
+.gallery-header {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.gallery-header p { opacity: 0.8; }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 12px;
+  padding: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: 0.4s;
+}
+
+.gallery-grid img:hover { transform: scale(1.03); }
+
+footer {
+  text-align: center;
+  padding: 30px;
+  opacity: 0.7;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="brand">Mahnoor Fatima</div>
+  <div>
+    <a href="#home">Home</a>
+    <a href="#info">About</a>
+    <a href="#gallery">Gallery</a>
+    <button class="toggle-btn">Dark / Light</button>
+  </div>
+</nav>
+
+<section class="hero fade" id="home">
+  <h1>Jennie Gallery</h1>
+</section>
+
+<section class="info-section fade" id="info">
+  <h2>About Jennie & Ruby</h2>
+
+  <p>Jennie debuted as a member of <strong>BLACKPINK</strong> with the iconic double title tracks <em>Boombayah</em> and <em>Whistle</em>. In November 2018, she made her solo debut with <strong>SOLO</strong>, a massive commercial success that showcased her versatility as both a singer and rapper. The song broke numerous records and earned multiple awards.</p>
+
+  <p>On <strong>March 7, 2025</strong>, Jennie released her debut solo album <strong>Ruby</strong>. The album highlights her diverse artistry, blending confident hip-hop, catchy pop, sultry R&B, and introspective emotional tones.</p>
+
+  <h3>Ruby — Track Highlights</h3>
+  <ul>
+    <li><strong>Intro: JANE (with FKJ)</strong> — Dreamy, soft, and atmospheric opener.</li>
+    <li><strong>like JENNIE</strong> — Bold, anthemic self-love track with sharp rap flows.</li>
+    <li><strong>start a war</strong> — Dark, experimental, and aggressive.</li>
+    <li><strong>Handlebars (feat. Dua Lipa)</strong> — Playful, catchy pop collab.</li>
+    <li><strong>with the IE (way up)</strong> — Energetic, rising vibe.</li>
+    <li><strong>ExtraL (feat. Doechii)</strong> — Fierce hip-hop standout.</li>
+    <li><strong>Mantra</strong> — Groovy, unconventional hit about confidence.</li>
+    <li><strong>Love Hangover (feat. Dominic Fike)</strong> — Sultry R&B about emotional chaos.</li>
+    <li><strong>ZEN</strong> — Empowering, stomping presence.</li>
+    <li><strong>Damn Right (feat. Childish Gambino & Kali Uchis)</strong> — Smooth, star-powered swagger.</li>
+    <li><strong>F.T.S.</strong> — Confessional ballad flipping expectations.</li>
+  </ul>
+
+  <h3>Record-Breaking Achievements</h3>
+  <ul>
+    <li>Over <strong>1 million</strong> first-week sales — highest for a K-pop female soloist in 2025.</li>
+    <li>Surpassed <strong>4.8 million</strong> global sales — best-selling K-pop album of 2025.</li>
+    <li>Highest-charting K-pop female solo album on the UK Albums Chart (#3).</li>
+    <li>First K-pop female solo album certified <strong>Silver</strong> by the BPI.</li>
+    <li>Multiple Billboard Hot 100 entries — record for a female K-pop solo album.</li>
+    <li><strong>Mantra</strong> became the highest-charting UK single by a Korean female soloist.</li>
+    <li>Most certified K-pop female soloist in several markets.</li>
+    <li>Over <strong>2.5 billion</strong> Spotify streams — most for any 2025 K-pop act.</li>
+  </ul>
+
+  <h3>Major Awards</h3>
+  <ul>
+    <li><strong>Billboard Women in Music 2025</strong> — Global Force Award.</li>
+    <li><strong>40th Golden Disc Awards (2026)</strong> — Artist of the Year (Daesang), Best Digital Song, Global Impact Award.</li>
+    <li><strong>2025 Melon Music Awards</strong> — Record of the Year (Daesang), Top 10 Artist, Millions Top 10.</li>
+    <li><strong>China Year-End Awards</strong> — Swept 4 major categories.</li>
+    <li><strong>RIAA Gold Certifications</strong> for “like JENNIE” and “Mantra”.</li>
+    <li>Featured in best-of-2025 lists by Rolling Stone, Billboard, and Pitchfork.</li>
+  </ul>
+</section>
+
+<section class="gallery-header fade" id="gallery">
+  <h2>Gallery</h2>
+  <p>A curated collection of Jennie visuals by <strong>Mahnoor Fatima</strong>.</p>
+</section>
+
+<section class="gallery-grid fade">
+  <img src="https://i.pinimg.com/736x/25/ab/ef/25abef58ab532e60073a5eded790f383.jpg">
+  <img src="https://i.pinimg.com/736x/42/e5/41/42e5416a5c0d00eb463475f5cef9dcb4.jpg">
+  <img src="https://i.pinimg.com/736x/14/bb/a7/14bba7ac486a74cb5728426bab9ec387.jpg">
+  <img src="https://i.pinimg.com/736x/f8/bc/90/f8bc90950eadf4c4fb65fc55c9361771.jpg">
+  <img src="https://i.pinimg.com/736x/fa/d7/8f/fad78fe7501d787aeb12de32400afabd.jpg">
+  <img src="https://i.pinimg.com/736x/ed/c0/a3/edc0a3f059b3d96a1bee285bfd61ff4b.jpg">
+  <img src="https://i.pinimg.com/736x/eb/67/9a/eb679af0c1365e430f36776db5fa1f31.jpg">
+  <img src="https://i.pinimg.com/736x/53/03/4f/53034fa1b7dc76b9f8093f7fd498a30b.jpg">
+  <img src="https://i.pinimg.com/736x/b8/a1/56/b8a156052824fc2781aa33d5985e7b34.jpg">
+  <img src="https://i.pinimg.com/736x/94/20/92/94209268c7385048ee6266720a8ffcf7.jpg"
+</section>
+
+<footer>
+  © 2026 Mahnoor Fatima • All rights reserved
+</footer>
+
+<script>
+document.querySelector(".toggle-btn").addEventListener("click", () => {
+  document.body.classList.toggle("light");
+});
+</script>
+
+</body>
+</html>
